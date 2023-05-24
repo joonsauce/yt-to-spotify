@@ -1,0 +1,15 @@
+.bg-custom-dark {
+    background-color: #202020;
+}
+
+.customfont-med {
+    font-family: 'made_evolve_medium'
+}
+
+.customfont-light {
+    font-family: 'made_evolve_thin'
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
