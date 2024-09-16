@@ -8,6 +8,7 @@
         <link rel="shortcut icon" href="https://joonsauce.me/media/logo.png" type="image/x-icon">
         <script src="https://joonsauce.me/jquery-3.6.4.js"></script>
         <script src="https://joonsauce.me/bootstrap.bundle.js"></script>
+        <script src="./scripts.js"></script>
         <title>Joon's YouTube to Spotify playlist converter</title>
     </head>
     <body class="bg-custom-dark">
@@ -33,10 +34,10 @@
             </div>
             <form>
                 <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-0 text-light d-flex justify-content-center py-2">
-                    <input class="form-control border-danger customfont-med border-3 border" type="text" style="border-radius: 0.5vw; width: 50%" id="url" placeholder="YouTube Playlist URL">
+                    <input class="form-control border-danger customfont-med border-3 border" type="text" style="border-radius: 0.5vw; width: 50%" id="playlistURL" placeholder="YouTube Playlist URL">
                 </div>
                 <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-0 text-light d-flex justify-content-center py-2">
-                    <button type="submit" class="btn btn-danger">Convert!</button>
+                    <button type="button" class="btn btn-danger" onclick="ytToSpotify()">Convert!</button>
                 </div>
             </form>
         </div>
