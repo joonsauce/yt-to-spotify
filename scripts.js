@@ -19,7 +19,7 @@ function makeSpotifyAuthURL() {
     let baseURL = "https://accounts.spotify.com/authorize?";
 
     baseURL += 'response_type=code';
-    baseURL += '&client_id=300a899a9a15455cba6116bdfb8f62e4';
+    baseURL += '&client_id=';
     baseURL += '&scope=' + encodeURIComponent('user-read-private user-read-email');
     baseURL += '&redirect_uri=' + window.location.href.toString() + 'redirect';
 
