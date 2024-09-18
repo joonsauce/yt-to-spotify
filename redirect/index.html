@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+    <head>
+        <script src="https://joonsauce.me/jquery-3.6.4.js"></script>
+        <link rel="shortcut icon" href="https://joonsauce.me/media/logo.png" type="image/x-icon">
+    </head>
+
+    <script>
+        $(document).ready(function () {
+            let playlistURL = sessionStorage.getItem("ytPlaylistURL");
+            // redirect to home page if playlist URL is invalid
+            if (playlistURL == undefined || playlistURL == null) {
+                window.open("/");
+            }
+            sessionStorage.clear("ytPlaylistURL");
+
+            let params = new URLSearchParams(window.location.search);
+
+            // call to API to make the conversion happen
+            $.ajax({
+                url: window.location.origin.toString() + "/ytSpotifyAPI",
+                type: "GET",
+                data: {
+                    "spotify_user": params.get('code'),
+                    "youtube_link": playlistURL
+                },
+                success: function(data) {
+                    if (!data.success) {
+                        alert(data.error);
+                        return;
+                    }
+                    alert("Done.");
+                    window.open(window.location.origin.toString() + "/yt-to-spotify");
+                },
+                error: function() {
+                    alert("Something went wrong.");
+                    window.open(window.location.origin.toString() + "/yt-to-spotify");
+                }
+            });
+        });
+    </script>
+</html>
